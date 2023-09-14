@@ -9,8 +9,8 @@ import json from './fakeWeatherData.json'
 
 console.log(json);
 const App=()=>{
-  return(<>
- <div className="app">
+  return(
+ <>
   <header>
  <form>
 
@@ -79,8 +79,8 @@ const App=()=>{
 
 
        </div>
-      </div>
-  </>);
+      </>
+);
 }
 
 export default App;

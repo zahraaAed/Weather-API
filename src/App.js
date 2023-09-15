@@ -8,22 +8,19 @@ import Search from './components/Search.js';
 import CurrentWeather from "./components/currentWeather";
 import WeatherItem from "./components/WeatherItem";
 const App=()=>{
+  const list=json.list.slice(1,8);
+  const weatherItemsList=list.map(item=><WeatherItem temp={item.main.temp} hour={item.dt_txt.split(" ")[1].slice(0,2)} imgUrl={partlyCloudy}/>)
+  console.log(list);
   return(
  <>
   <header>
- <Search/>
+ <Search city={json.city.name}/>
   </header>
-  <CurrentWeather minTemp={10} maxTemp={11} hum={78} pressure={1008.48} />
+  <CurrentWeather minTemp={json.list[0].main.temp_min} maxTemp={json.list[0].main.temp_max} hum={json.list[0].main.humidity} pressure={json.list[0].main.pressure} />
 
         
        <div className="forecast">
-        <WeatherItem hour={3} temp={8} imgUrl={partlyCloudy}  />
-        <WeatherItem hour={6} temp={9} imgUrl={partlyCloudy} />
-        <WeatherItem hour={9} temp={14} imgUrl={Img2}/>
-        <WeatherItem hour={12} temp={17} imgUrl={Img2}/>
-        <WeatherItem hour={15} temp={18} imgUrl={Img2}/>
-        <WeatherItem hour={18} temp={16} imgUrl={Img2}/>
-        <WeatherItem hour={21} temp={13} imgUrl={partlyCloudy}/>
+        {weatherItemsList}
 
 
        </div>

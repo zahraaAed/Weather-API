@@ -1,15 +1,14 @@
-import React from "react";
+import React,{useState} from "react";
 import "./Search.css";
 
-const Search = ({city}) =>{
+const Search = ({city,handleClick}) =>{
   return (
     <>
     <form>
-<label for="country">{city}</label>
-<button type="submit">Find Weather</button>
+<input type="text" id="input"/>
+<button type="button" onClick={handleClick}>Find Weather</button>
   </form>
     </>
   );
 }
-
 export default Search;

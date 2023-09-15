@@ -1,0 +1,15 @@
+.card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  .card p{
+    font-size: 26px;
+    color: black;
+  }
+  .card img{
+    width: 100px;
+    height: 100px;
+  }
